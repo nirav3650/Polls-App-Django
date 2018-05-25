@@ -1,0 +1,12 @@
+{% load static %}
+
+{% if latest_question_list %}
+    <ul>
+        {% for qs in latest_question_list %}
+        <li><a href="{% url 'polls:detail' qs.id %}">{{ qs.question_text}}</a></li>
+    
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No Questions found</p>
+{% endif %}
